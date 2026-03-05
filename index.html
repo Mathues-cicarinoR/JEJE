@@ -19,8 +19,25 @@
             background-attachment: fixed;
         }
         .tour-swiper { width: 100%; height: 250px; border-radius: 12px 12px 0 0; }
-        .swiper-button-next, .swiper-button-prev { scale: 0.7; color: #fff !important; }
-        .swiper-pagination-bullet-active { background: #ffb703 !important; }
+        
+        /* Cor dos pontinhos de navegação ativos */
+        .swiper-pagination-bullet-active {
+            background: #f97316 !important; 
+            opacity: 1;
+        }   
+
+        /* ESTILOS DA SETA LIMPA (Evita selecionar texto e tira a bola cinza) */
+        .clean-nav {
+            background: transparent !important;
+            color: white !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            cursor: pointer !important;
+        }
+        .clean-nav::after {
+            font-size: 24px !important;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.6); /* Sombra para aparecer nas fotos claras */
+        }
     </style>
 
     <script>
@@ -40,7 +57,6 @@
     </script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
-
     <nav class="bg-white/95 backdrop-blur-sm text-gray-800 shadow-lg fixed w-full z-50 top-0 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center">
@@ -125,13 +141,17 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper tour-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1589901844607-380d886b08a2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up">
+                <div class="relative h-64 overflow-hidden">
+                    <div class="swiper tour-swiper h-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1589901844607-380d886b08a2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                    <div class="swiper-button-next clean-nav"></div>
+                    <div class="swiper-button-prev clean-nav"></div>
                 </div>
                 <div class="p-6">
                     <div class="flex justify-between items-start mb-4 text-left">
@@ -139,69 +159,217 @@
                         <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">MAIS VENDIDO</span>
                     </div>
                     <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
-                        <li><i class="fa-solid fa-check text-turismo mr-2"></i>Muro Alto, Cuppe, Porto e Maracaípe</li>
-                        <li><i class="fa-solid fa-camera text-turismo mr-2"></i>Paradas Estratégicas para Fotos</li>
-                        <li><i class="fa-solid fa-user-check text-turismo mr-2"></i>Bugueiros Credenciados</li>
+                        <li><i class="fa-solid fa-check text-turismo mr-2"></i>Muro Alto, Cupe e Maracaípe</li>
+                        <li><i class="fa-solid fa-camera text-turismo mr-2"></i>Paradas Estratégicas</li>
                     </ul>
-                    <div class="flex items-center justify-between mt-auto">
-                        <span class="text-2xl font-black text-turismo">R$ 350 <small class="text-xs text-gray-400">/ buggy</small></span>
-                        <a href="https://wa.me/5521979860604?text=Olá, Jeje! Quero agendar o passeio de Buggy Ponta a Ponta." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Agendar
-                        </a>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ 350 <small class="text-xs text-gray-400">/ buggy</small></div>
+                    <div class="flex gap-2">
+                        <button onclick="openModal('modal-ponta')" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba Mais</button>
+                        <a href="https://wa.me/5521979860604?text=Olá! Quero o Buggy Ponta a Ponta." target="_blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative h-64 overflow-hidden">
+                    <div class="swiper tour-swiper h-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1620311093408-e2469493f0f7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next clean-nav"></div>
+                    <div class="swiper-button-prev clean-nav"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 text-left leading-tight">Praia dos Carneiros</h3>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
+                        <li><i class="fa-solid fa-ship text-turismo mr-2"></i>Catamarã Incluso</li>
+                        <li><i class="fa-solid fa-church text-turismo mr-2"></i>Igrejinha de S. Benedito</li>
+                    </ul>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ 120 <small class="text-xs text-gray-400">/ pessoa</small></div>
+                    <div class="flex gap-2">
+                        <button onclick="openModal('modal-carneiros')" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba Mais</button>
+                        <a href="https://wa.me/5521979860604?text=Olá! Quero ir para Carneiros." target="_blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
                     </div>
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                <div class="swiper tour-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1620311093408-e2469493f0f7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1620311087413-9a43a758713f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                <div class="relative h-64 overflow-hidden">
+                    <div class="swiper tour-swiper h-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1506929197327-0e3962d7a603?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4 text-left leading-tight">Praia dos Carneiros</h3>
-                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
-                        <li><i class="fa-solid fa-ship text-turismo mr-2"></i>Passeio de Catamarã Incluso</li>
-                        <li><i class="fa-solid fa-church text-turismo mr-2"></i>Visita à Igrejinha de S. Benedito</li>
-                        <li><i class="fa-solid fa-spa text-turismo mr-2"></i>Banho de Argila Rejuvenescedor</li>
-                    </ul>
-                    <div class="flex items-center justify-between mt-auto">
-                        <span class="text-2xl font-black text-turismo">R$ 120 <small class="text-xs text-gray-400">/ por pessoa</small></span>
-                        <a href="https://wa.me/5521979860604?text=Olá! Gostaria de informações sobre o passeio para Praia dos Carneiros." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Reservar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                <div class="swiper tour-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
-                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1506929197327-0e3962d7a603?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
-                    </div>
-                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                    <div class="swiper-button-next clean-nav"></div>
+                    <div class="swiper-button-prev clean-nav"></div>
                 </div>
                 <div class="p-6 text-left">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight text-left">Maragogi: Alagoas</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Maragogi: Alagoas</h3>
                     <ul class="text-gray-600 mb-6 space-y-2 text-sm">
-                        <li><i class="fa-solid fa-mask-snorkel text-turismo mr-2"></i>Visita às Galés (Piscinas Naturais)</li>
-                        <li><i class="fa-solid fa-van-shuttle text-turismo mr-2"></i>Saída Direto de Porto de Galinhas</li>
-                        <li><i class="fa-solid fa-umbrella-beach text-turismo mr-2"></i>O Caribe Alagoano ao seu alcance</li>
+                        <li><i class="fa-solid fa-mask-snorkel text-turismo mr-2"></i>Piscinas Naturais (Galés)</li>
+                        <li><i class="fa-solid fa-van-shuttle text-turismo mr-2"></i>Saída Direto de Porto</li>
                     </ul>
-                    <div class="flex items-center justify-between mt-auto">
-                        <span class="text-2xl font-black text-turismo">R$ 150 <small class="text-xs text-gray-400">/ por pessoa</small></span>
-                        <a href="https://wa.me/5521979860604?text=Olá, Jeje! Gostaria de ir para Maragogi, pode me passar detalhes?" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Consultar
-                        </a>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ 150 <small class="text-xs text-gray-400">/ pessoa</small></div>
+                    <div class="flex gap-2">
+                        <button onclick="openModal('modal-maragogi')" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba Mais</button>
+                        <a href="https://wa.me/5521979860604?text=Olá! Quero ir para Maragogi." target="_blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
+
+    <div id="modal-ponta" class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="relative h-48 bg-slate-200">
+                <img src="https://images.unsplash.com/photo-1589901844607-380d886b08a2?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                <button onclick="closeModal('modal-ponta')" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Ponta a Ponta (Buggy)</h2>
+                <p class="text-gray-600 mb-6">Explore as praias mais icônicas da região em um passeio emocionante com condutores experientes e paradas estratégicas.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-left">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-map-location-dot text-turismo"></i> Roteiro
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Praia de Muro Alto (Banho)</li>
+                            <li>• Praia do Cupe</li>
+                            <li>• Porto de Galinhas (Vila)</li>
+                            <li>• Pontal de Maracaípe (Pôr do Sol)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-turismo"></i> Informações
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Duração: Aprox. 4h a 6h</li>
+                            <li>• Capacidade: Até 4 pessoas</li>
+                            <li>• Saídas: Diárias</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
+                        <span class="text-3xl font-black text-turismo">R$ 350</span>
+                    </div>
+                    <a href="https://wa.me/5521979860604?text=Olá, Jeje! Quero agendar o Buggy Ponta a Ponta." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                        Reservar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-carneiros" class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="relative h-48 bg-slate-200">
+                <img src="https://images.unsplash.com/photo-1620311093408-e2469493f0f7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                <button onclick="closeModal('modal-carneiros')" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 text-left">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Praia dos Carneiros</h2>
+                <p class="text-gray-600 mb-6">Um dos destinos mais paradisíacos do Brasil, famoso por suas águas calmas e a igrejinha à beira-mar.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-turismo"></i> Destaques
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Passeio de Catamarã</li>
+                            <li>• Famoso Banho de Argila</li>
+                            <li>• Visita aos Bancos de Areia</li>
+                            <li>• Igrejinha de São Benedito</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-turismo"></i> Detalhes
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Incluso: Transfer + Catamarã</li>
+                            <li>• Duração: Dia Inteiro</li>
+                            <li>• Saída: A combinar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
+                        <span class="text-3xl font-black text-turismo">R$ 120</span>
+                    </div>
+                    <a href="https://wa.me/5521979860604?text=Olá! Quero reservar Carneiros." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                        Reservar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-maragogi" class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="relative h-48 bg-slate-200">
+                <img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                <button onclick="closeModal('modal-maragogi')" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 text-left">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Maragogi: Alagoas</h2>
+                <p class="text-gray-600 mb-6">Visite o "Caribe Brasileiro". Águas cristalinas, mornas e repletas de vida marinha nas famosas Galés.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-umbrella-beach text-turismo"></i> Experiência
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Piscinas Naturais (Galés)</li>
+                            <li>• Snorkeling e Fotos Sub</li>
+                            <li>• Praia de Antunes</li>
+                            <li>• Caminho de Moisés</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-van-shuttle text-turismo"></i> Logística
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Saída: Porto de Galinhas</li>
+                            <li>• Horário: Aprox. 07h</li>
+                            <li>• Retorno: Final da tarde</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
+                        <span class="text-3xl font-black text-turismo">R$ 150</span>
+                    </div>
+                    <a href="https://wa.me/5521979860604?text=Olá! Quero ir para Maragogi." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                        Reservar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="avaliacoes" class="py-24 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4">
@@ -275,15 +443,12 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
         AOS.init({ once: true, duration: 800 });
 
-        new Swiper(".tour-swiper", {
-            loop: true,
-            pagination: { el: ".swiper-pagination", clickable: true },
-            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-        });
-
+        // O SEGREDO ESTÁ AQUI: Removi o new Swiper global que estava conflitando!
+        // Deixei apenas o de Avaliações que é único na tela.
         new Swiper(".avaliacaoSwiper", {
             slidesPerView: 1,
             spaceBetween: 30,
@@ -293,6 +458,7 @@
             breakpoints: { 768: { slidesPerView: 2 } }
         });
 
+        // Contadores
         const counters = document.querySelectorAll('.counter');
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
@@ -313,6 +479,53 @@
             }
         });
         observer.observe(document.querySelector('#numeros-section'));
+
+        // Modais
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('bg-black/60')) {
+                event.target.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // SWIPER DOS CARDS - AQUI CADA UM FUNCIONA INDEPENDENTE
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.group');
+            
+            cards.forEach(card => {
+                const swiperEl = card.querySelector('.tour-swiper');
+                const nextEl = card.querySelector('.swiper-button-next');
+                const prevEl = card.querySelector('.swiper-button-prev');
+                const pagEl = card.querySelector('.swiper-pagination');
+
+                if (swiperEl) {
+                    new Swiper(swiperEl, {
+                        loop: true,
+                        autoplay: false, 
+                        pagination: { 
+                            el: pagEl, 
+                            clickable: true 
+                        },
+                        navigation: { 
+                            nextEl: nextEl, 
+                            prevEl: prevEl 
+                        },
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
