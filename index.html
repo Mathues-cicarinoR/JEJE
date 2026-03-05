@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEJE Passeios | O Melhor de Porto de Galinhas e Região</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-section {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&fit=crop&w=1920&q=80'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .tour-swiper { width: 100%; height: 250px; border-radius: 12px 12px 0 0; }
+        .swiper-button-next, .swiper-button-prev { scale: 0.7; color: #fff !important; }
+        .swiper-pagination-bullet-active { background: #ffb703 !important; }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        turismo: {
+                            DEFAULT: '#0077b6', 
+                            light: '#90e0ef',
+                            accent: '#ffb703', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <nav class="bg-white/95 backdrop-blur-sm text-gray-800 shadow-lg fixed w-full z-50 top-0 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                 <a href="#inicio" class="text-2xl font-bold text-turismo italic">JEJE<span class="text-turismo-accent">PASSEIOS</span></a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#inicio" class="hover:text-turismo transition-colors">Início</a>
+                <a href="#destinos" class="hover:text-turismo transition-colors">Passeios</a>
+                <a href="#quem-somos" class="hover:text-turismo transition-colors">Quem Somos</a>
+                <a href="https://wa.me/5521979860604" target="_blank" class="bg-green-500 hover:bg-green-600 px-5 py-2.5 rounded-md font-semibold transition-all text-white flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Agendar Agora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero-section h-[100vh] flex items-center justify-center text-center text-white px-4 pt-16">
+        <div class="max-w-3xl" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-md">Descubra o paraíso em <br>Porto de Galinhas.</h1>
+            <p class="text-lg md:text-xl text-gray-100 mb-8 font-medium">Os melhores roteiros, buggys e piscinas naturais com quem vive e ama Pernambuco.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#destinos" class="bg-turismo-accent hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all shadow-lg">Ver Passeios</a>
+                <a href="https://wa.me/5521979860604?text=Olá, Jeje! Gostaria de planejar meus passeios em Porto de Galinhas." class="bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all">Falar com a Equipe</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="numeros-section" class="py-16 bg-turismo text-white border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span class="counter" data-target="8000">0</span>+</div>
+                    <p class="text-blue-100 font-semibold uppercase tracking-wider text-sm">Turistas Atendidos</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span class="counter" data-target="10">0</span>+</div>
+                    <p class="text-blue-100 font-semibold uppercase tracking-wider text-sm">Anos de Experiência</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span class="counter" data-target="5">0</span>/5</div>
+                    <p class="text-blue-100 font-semibold uppercase tracking-wider text-sm">Nota no TripAdvisor</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span class="counter" data-target="100">0</span>%</div>
+                    <p class="text-blue-100 font-semibold uppercase tracking-wider text-sm">Diversão Garantida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quem-somos" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 relative" data-aos="fade-right">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-turismo-accent rounded-full opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80" alt="Equipe JEJE Passeios" class="rounded-2xl shadow-2xl relative z-10">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-turismo rounded-2xl"></div>
+                </div>
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-left">Especialistas em criar memórias no litoral pernambucano</h2>
+                    <div class="w-20 h-1 bg-turismo-accent mb-8"></div>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6 text-left">
+                        A <strong>JEJE Passeios</strong> é referência em turismo receptivo em Porto de Galinhas. Nossa missão é proporcionar a você e sua família uma experiência autêntica, segura e inesquecível. 
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8 text-left">
+                        Do famoso passeio de buggy "Ponta a Ponta" até as piscinas naturais mais cristalinas, cuidamos de cada detalhe para que sua única preocupação seja o protetor solar.
+                    </p>
+                    <a href="https://wa.me/5521979860604" class="inline-flex items-center gap-2 font-bold text-turismo hover:text-turismo-accent transition-colors">
+                        Fale com um guia local <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destinos" class="py-24 max-w-7xl mx-auto px-4 bg-gray-50">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 italic">Passeios que você vai amar</h2>
+            <div class="w-20 h-1 bg-turismo-accent mx-auto mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper tour-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1589901844607-380d886b08a2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 text-left">
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">Ponta a Ponta (Buggy)</h3>
+                        <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">MAIS VENDIDO</span>
+                    </div>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
+                        <li><i class="fa-solid fa-check text-turismo mr-2"></i>Muro Alto, Cuppe, Porto e Maracaípe</li>
+                        <li><i class="fa-solid fa-camera text-turismo mr-2"></i>Paradas Estratégicas para Fotos</li>
+                        <li><i class="fa-solid fa-user-check text-turismo mr-2"></i>Bugueiros Credenciados</li>
+                    </ul>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-2xl font-black text-turismo">R$ 350 <small class="text-xs text-gray-400">/ buggy</small></span>
+                        <a href="https://wa.me/5521979860604?text=Olá, Jeje! Quero agendar o passeio de Buggy Ponta a Ponta." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Agendar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper tour-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1620311093408-e2469493f0f7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1620311087413-9a43a758713f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 text-left leading-tight">Praia dos Carneiros</h3>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
+                        <li><i class="fa-solid fa-ship text-turismo mr-2"></i>Passeio de Catamarã Incluso</li>
+                        <li><i class="fa-solid fa-church text-turismo mr-2"></i>Visita à Igrejinha de S. Benedito</li>
+                        <li><i class="fa-solid fa-spa text-turismo mr-2"></i>Banho de Argila Rejuvenescedor</li>
+                    </ul>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-2xl font-black text-turismo">R$ 120 <small class="text-xs text-gray-400">/ por pessoa</small></span>
+                        <a href="https://wa.me/5521979860604?text=Olá! Gostaria de informações sobre o passeio para Praia dos Carneiros." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Reservar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div class="swiper tour-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1506929197327-0e3962d7a603?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                </div>
+                <div class="p-6 text-left">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight text-left">Maragogi: Alagoas</h3>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm">
+                        <li><i class="fa-solid fa-mask-snorkel text-turismo mr-2"></i>Visita às Galés (Piscinas Naturais)</li>
+                        <li><i class="fa-solid fa-van-shuttle text-turismo mr-2"></i>Saída Direto de Porto de Galinhas</li>
+                        <li><i class="fa-solid fa-umbrella-beach text-turismo mr-2"></i>O Caribe Alagoano ao seu alcance</li>
+                    </ul>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-2xl font-black text-turismo">R$ 150 <small class="text-xs text-gray-400">/ por pessoa</small></span>
+                        <a href="https://wa.me/5521979860604?text=Olá, Jeje! Gostaria de ir para Maragogi, pode me passar detalhes?" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="avaliacoes" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold">Experiências de quem já viajou conosco</h2>
+                <div class="w-20 h-1 bg-turismo-accent mx-auto mt-4"></div>
+            </div>
+            
+            <div class="swiper avaliacaoSwiper pb-12">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 italic relative text-left">
+                            <i class="fa-solid fa-quote-left text-turismo-accent text-4xl absolute -top-4 left-6"></i>
+                            <p class="mb-6 text-gray-300">"O Jeje é nota 10! Fizemos o passeio de buggy e ele sabia os melhores pontos para fotos onde não tinha muita gente. Valeu cada centavo!"</p>
+                            <h4 class="font-bold text-white text-left">Mariana Silva - SP</h4>
+                        </div>
+                    </div>
+                    <div class="swiper-slide p-4 text-left">
+                        <div class="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 italic relative">
+                            <i class="fa-solid fa-quote-left text-turismo-accent text-4xl absolute -top-4 left-6"></i>
+                            <p class="mb-6 text-gray-300">"Toda a logística para Carneiros foi impecável. Guia pontual e muito educado. Com certeza recomendaremos para nossos amigos."</p>
+                            <h4 class="font-bold text-white">Carlos André - MG</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold">Nossa Equipe</h2>
+                <div class="w-20 h-1 bg-turismo-accent mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://i.pravatar.cc/150?u=jeje" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
+                    <h3 class="font-bold text-2xl mb-1 text-slate-900 text-center">Jefferson (Jeje)</h3>
+                    <p class="text-turismo font-semibold mb-4 text-center">Fundador e Guia Líder</p>
+                    <p class="text-gray-500 text-sm italic text-center">"Apaixonado por Porto, o Jeje garante que cada turista sinta a energia única de Pernambuco."</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://i.pravatar.cc/150?u=junior" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
+                    <h3 class="font-bold text-2xl mb-1 text-slate-900 text-center">Júnior Buggy</h3>
+                    <p class="text-turismo font-semibold mb-4 text-center">Especialista em Aventuras</p>
+                    <p class="text-gray-500 text-sm italic text-center">"Com Júnior, a emoção é garantida com toda a segurança nos melhores caminhos de areia."</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://i.pravatar.cc/150?u=ana" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
+                    <h3 class="font-bold text-2xl mb-1 text-slate-900 text-center">Ana Luísa</h3>
+                    <p class="text-turismo font-semibold mb-4 text-center">Atendimento e Reservas</p>
+                    <p class="text-gray-500 text-sm italic text-center">"A Ana organiza seu roteiro de forma personalizada, do primeiro contato até o fim da viagem."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-gray-400 py-12 text-center border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-white mb-2 italic">JEJE<span class="text-turismo-accent">PASSEIOS</span></h2>
+            <p class="mb-6">Sua melhor experiência em Porto de Galinhas começa aqui.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.instagram.com/jejepasseios?igsh=Y2VwZ2RheWlldWs3" target="_blank" class="text-gray-400 hover:text-white transition-all text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/5521979860604" class="text-gray-400 hover:text-white transition-all text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-sm">© 2026 JEJE Passeios - Porto de Galinhas, PE.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+
+        new Swiper(".tour-swiper", {
+            loop: true,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        });
+
+        new Swiper(".avaliacaoSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: { delay: 4000 },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: { 768: { slidesPerView: 2 } }
+        });
+
+        const counters = document.querySelectorAll('.counter');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const increment = target / 100;
+                    let current = 0;
+                    const updateCount = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current);
+                            setTimeout(updateCount, 20);
+                        } else { counter.innerText = target; }
+                    };
+                    updateCount();
+                });
+                observer.unobserve(entries[0].target);
+            }
+        });
+        observer.observe(document.querySelector('#numeros-section'));
+    </script>
+</body>
+</html>
