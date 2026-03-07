@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEJE Passeios | O Melhor de Porto de Galinhas e Região</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
+
     <style>
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
+
         .hero-section {
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&fit=crop&w=1920&q=80'); 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .tour-swiper { width: 100%; height: 250px; border-radius: 12px 12px 0 0; }
-        
+
+        .tour-swiper {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px 12px 0 0;
+        }
+
         /* Cor dos pontinhos de navegação ativos */
         .swiper-pagination-bullet-active {
-            background: #f97316 !important; 
+            background: #f97316 !important;
             opacity: 1;
-        }   
+        }
 
         /* ESTILOS DA SETA LIMPA (Evita selecionar texto e tira a bola cinza) */
         .clean-nav {
@@ -34,104 +43,121 @@
             -webkit-user-select: none !important;
             cursor: pointer !important;
         }
+
         .clean-nav::after {
             font-size: 24px !important;
-            text-shadow: 0px 2px 4px rgba(0,0,0,0.6); /* Sombra para aparecer nas fotos claras */
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+            /* Sombra para aparecer nas fotos claras */
         }
     </style>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        turismo: {
-                            DEFAULT: '#0077b6', 
-                            light: '#90e0ef',
-                            accent: '#ffb703', 
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!--  MENU  -->
+
     <nav class="bg-white/95 backdrop-blur-sm text-gray-800 shadow-lg fixed w-full z-50 top-0 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                 <a href="#inicio" class="text-2xl font-bold text-turismo italic">JEJE<span class="text-turismo-accent">PASSEIOS</span></a>
+                <a href="#inicio" class="text-2xl font-bold text-turismo italic">JEJE<span
+                        class="text-turismo-accent">PASSEIOS</span></a>
             </div>
-            
+
             <div class="hidden md:flex space-x-8 items-center font-medium">
                 <a href="#inicio" class="hover:text-turismo transition-colors">Início</a>
                 <a href="#destinos" class="hover:text-turismo transition-colors">Passeios</a>
                 <a href="#quem-somos" class="hover:text-turismo transition-colors">Quem Somos</a>
-                <a href="https://wa.me/5521979860604" target="_blank" class="bg-green-500 hover:bg-green-600 px-5 py-2.5 rounded-md font-semibold transition-all text-white flex items-center gap-2">
+                <a href="https://wa.me/5521979860604" target="_blank"
+                    class="bg-green-500 hover:bg-green-600 px-5 py-2.5 rounded-md font-semibold transition-all text-white flex items-center gap-2">
                     <i class="fa-brands fa-whatsapp text-lg"></i> Agendar Agora
                 </a>
             </div>
         </div>
     </nav>
 
-    <section id="inicio" class="hero-section h-[100vh] flex items-center justify-center text-center text-white px-4 pt-16">
+    <!--  MENU  -->
+
+    <section id="inicio"
+        class="hero-section h-[100vh] flex items-center justify-center text-center text-white px-4 pt-16">
         <div class="max-w-3xl" data-aos="fade-up">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-md">Descubra o paraíso em <br>Porto de Galinhas.</h1>
-            <p class="text-lg md:text-xl text-gray-100 mb-8 font-medium">Os melhores roteiros, buggys e piscinas naturais com quem vive e ama Pernambuco.</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-md">Descubra o
+                paraíso em <br>Porto de Galinhas.</h1>
+            <p class="text-lg md:text-xl text-gray-100 mb-8 font-medium">Os melhores roteiros, buggys e piscinas
+                naturais com quem vive e ama Pernambuco.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#destinos" class="bg-turismo-accent hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all shadow-lg">Ver Passeios</a>
-                <a href="https://wa.me/5521979860604?text=Olá, Jeje! Gostaria de planejar meus passeios em Porto de Galinhas." class="bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all">Falar com a Equipe</a>
+                <a href="#destinos"
+                    class="bg-turismo-accent hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all shadow-lg">Ver
+                    Passeios</a>
+                <a href="https://wa.me/5521979860604?text=Olá, Jeje! Gostaria de planejar meus passeios em Porto de Galinhas."
+                    class="bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all">Falar
+                    com a Equipe</a>
             </div>
         </div>
     </section>
+
+    <!--  ESTATISTICAS  -->
 
     <section id="numeros-section" class="py-16 bg-turismo text-white border-y border-white/10">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span class="counter" data-target="8000">0</span>+</div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span
+                            class="counter" data-target="8000">0</span>+</div>
                     <p class="text-blue-100 font-semibold uppercase tracking-wider text-sm">Turistas Atendidos</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span class="counter" data-target="10">0</span>+</div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span
+                            class="counter" data-target="10">0</span>+</div>
                     <p class="text-blue-100 font-semibold uppercase tracking-wider text-sm">Anos de Experiência</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="300">
-                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span class="counter" data-target="5">0</span>/5</div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span
+                            class="counter" data-target="5">0</span>/5</div>
                     <p class="text-blue-100 font-semibold uppercase tracking-wider text-sm">Nota no TripAdvisor</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="400">
-                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span class="counter" data-target="100">0</span>%</div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center text-turismo-accent"><span
+                            class="counter" data-target="100">0</span>%</div>
                     <p class="text-blue-100 font-semibold uppercase tracking-wider text-sm">Diversão Garantida</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!--  QUEM SOMOS  -->
+
     <section id="quem-somos" class="py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-16">
                 <div class="w-full md:w-1/2 relative" data-aos="fade-right">
                     <div class="absolute -top-4 -left-4 w-24 h-24 bg-turismo-accent rounded-full opacity-20"></div>
-                    <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80" alt="Equipe JEJE Passeios" class="rounded-2xl shadow-2xl relative z-10">
+                    <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80"
+                        alt="Equipe JEJE Passeios" class="rounded-2xl shadow-2xl relative z-10">
                     <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-turismo rounded-2xl"></div>
                 </div>
                 <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-left">Especialistas em criar memórias no litoral pernambucano</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-left">Especialistas em criar
+                        memórias no litoral pernambucano</h2>
                     <div class="w-20 h-1 bg-turismo-accent mb-8"></div>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6 text-left">
-                        A <strong>JEJE Passeios</strong> é referência em turismo receptivo em Porto de Galinhas. Nossa missão é proporcionar a você e sua família uma experiência autêntica, segura e inesquecível. 
+                        A <strong>JEJE Passeios</strong> é referência em turismo receptivo em Porto de Galinhas. Nossa
+                        missão é proporcionar a você e sua família uma experiência autêntica, segura e inesquecível.
                     </p>
                     <p class="text-gray-600 text-lg leading-relaxed mb-8 text-left">
-                        Do famoso passeio de buggy "Ponta a Ponta" até as piscinas naturais mais cristalinas, cuidamos de cada detalhe para que sua única preocupação seja o protetor solar.
+                        Do famoso passeio de buggy "Ponta a Ponta" até as piscinas naturais mais cristalinas, cuidamos
+                        de cada detalhe para que sua única preocupação seja o protetor solar.
                     </p>
-                    <a href="https://wa.me/5521979860604" class="inline-flex items-center gap-2 font-bold text-turismo hover:text-turismo-accent transition-colors">
+                    <a href="https://wa.me/5521979860604"
+                        class="inline-flex items-center gap-2 font-bold text-turismo hover:text-turismo-accent transition-colors">
                         Fale com um guia local <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!--  DESTINOS  -->
 
     <section id="destinos" class="py-24 max-w-7xl mx-auto px-4 bg-gray-50">
         <div class="text-center mb-16" data-aos="fade-up">
@@ -140,13 +166,30 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
+
+    
+    <!--  CARD-1  -->             
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up">
                 <div class="relative h-64 overflow-hidden">
                     <div class="swiper tour-swiper h-full">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1589901844607-380d886b08a2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy1.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy2.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy3.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy4.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy5.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy6.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy7.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy8.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy9.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy10.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy11.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy12.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy13.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy14.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="/jeje/img/buggy/buggy15.jpeg" class="w-full h-full object-cover"></div>
+
+
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -156,26 +199,37 @@
                 <div class="p-6">
                     <div class="flex justify-between items-start mb-4 text-left">
                         <h3 class="text-xl font-bold text-slate-900 leading-tight">Ponta a Ponta (Buggy)</h3>
-                        <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">MAIS VENDIDO</span>
+                        <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">MAIS
+                            VENDIDO</span>
                     </div>
                     <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
                         <li><i class="fa-solid fa-check text-turismo mr-2"></i>Muro Alto, Cupe e Maracaípe</li>
                         <li><i class="fa-solid fa-camera text-turismo mr-2"></i>Paradas Estratégicas</li>
                     </ul>
-                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ 350 <small class="text-xs text-gray-400">/ buggy</small></div>
+                    
                     <div class="flex gap-2">
-                        <button onclick="openModal('modal-ponta')" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba Mais</button>
-                        <a href="https://wa.me/558189701764?text=Olá! Quero o Buggy Ponta a Ponta." target="_blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                        <button onclick="openModal('CARD_1')"
+                            class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba
+                            Mais</button>
+                        <a href="https://wa.me/5581989701764?text=Olá! Quero o Buggy Ponta a Ponta." target="_blank"
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+    <!--  CARD-2  --> 
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300"
+                data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-64 overflow-hidden">
                     <div class="swiper tour-swiper h-full">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1620311093408-e2469493f0f7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/quadriciclo/quadriciclo2.webp" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/quadriciclo/quadriciclo3.webp" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/quadriciclo/quadriciclo4.webp" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/quadriciclo/quadriciclo5.webp" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/quadriciclo/quadriciclo6.webp" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/quadriciclo/quadriciclo7.webp" class="w-full h-full object-cover"></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -183,25 +237,35 @@
                     <div class="swiper-button-prev clean-nav"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4 text-left leading-tight">Praia dos Carneiros</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 text-left leading-tight">Passeio de Quadriciulo </h3>
                     <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
                         <li><i class="fa-solid fa-ship text-turismo mr-2"></i>Catamarã Incluso</li>
                         <li><i class="fa-solid fa-church text-turismo mr-2"></i>Igrejinha de S. Benedito</li>
                     </ul>
-                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ 120 <small class="text-xs text-gray-400">/ pessoa</small></div>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ 120 <small
+                            class="text-xs text-gray-400">/ pessoa</small></div>
                     <div class="flex gap-2">
-                        <button onclick="openModal('modal-carneiros')" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba Mais</button>
-                        <a href="https://wa.me/558189701764?text=Olá! Quero ir para Carneiros." target="_blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                        <button onclick="openModal('CARD_2')"
+                            class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba
+                            Mais</button>
+                        <a href="https://wa.me/5581989701764?text=Olá! Quero ir para Carneiros." target="_blank"
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+    <!--  CARD-3  --> 
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300"
+                data-aos="fade-up" data-aos-delay="200">
                 <div class="relative h-64 overflow-hidden">
                     <div class="swiper tour-swiper h-full">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1506929197327-0e3962d7a603?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/maragogi/maragogi1.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/maragogi/maragogi2.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/maragogi/maragogi3.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/maragogi/maragogi4.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/maragogi/maragogi5.jpeg" class="w-full h-full object-cover"></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -214,28 +278,231 @@
                         <li><i class="fa-solid fa-mask-snorkel text-turismo mr-2"></i>Piscinas Naturais (Galés)</li>
                         <li><i class="fa-solid fa-van-shuttle text-turismo mr-2"></i>Saída Direto de Porto</li>
                     </ul>
-                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ 150 <small class="text-xs text-gray-400">/ pessoa</small></div>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ 150 <small
+                            class="text-xs text-gray-400">/ pessoa</small></div>
                     <div class="flex gap-2">
-                        <button onclick="openModal('modal-maragogi')" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba Mais</button>
-                        <a href="https://wa.me/558189701764?text=Olá! Quero ir para Maragogi." target="_blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                        <button onclick="openModal('CARD_3')"
+                            class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba
+                            Mais</button>
+                        <a href="https://wa.me/5521979860604?text=Olá! Quero ir para Maragogi." target="_blank"
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                    </div>
+                </div>
+            </div>
+
+    <!--  CARD-4  -->
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300"
+                data-aos="fade-up">
+                <div class="relative h-64 overflow-hidden">
+                    <div class="swiper tour-swiper h-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/carneiros/carneiros1.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/carneiros/carneiros2.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/carneiros/carneiros3.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/carneiros/carneiros4.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/carneiros/carneiros5.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/carneiros/carneiros6.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/carneiros/carneiros7.jpeg" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next clean-nav"></div>
+                    <div class="swiper-button-prev clean-nav"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 text-left">
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">Carneiros</h3>
+                        <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">DESTAQUE</span>
+                    </div>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
+                        <li><i class="fa-solid fa-check text-turismo mr-2"></i>BENEFÍCIO 1</li>
+                        <li><i class="fa-solid fa-star text-turismo mr-2"></i>BENEFÍCIO 2</li>
+                    </ul>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ PREÇO <small
+                            class="text-xs text-gray-400">/ PESSOA_OU_BUGGY</small></div>
+                    <div class="flex gap-2">
+                        <button onclick="openModal('CARD_4')"
+                            class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba
+                            Mais</button>
+                        <a href="LINK_DO_WHATSAPP" target="_blank"
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                    </div>
+                </div>
+            </div>
+
+    <!--  CARD-5  --> 
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300"
+                data-aos="fade-up">
+                <div class="relative h-64 overflow-hidden">
+                    <div class="swiper tour-swiper h-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/mergulho/mergulho1.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/mergulho/mergulho2.jpeg" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next clean-nav"></div>
+                    <div class="swiper-button-prev clean-nav"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 text-left">
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">Fotos Sub Aquaticas </h3>
+                        <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">PORTO</span>
+                    </div>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
+                        <li><i class="fa-solid fa-check text-turismo mr-2"></i>BENEFÍCIO 1</li>
+                        <li><i class="fa-solid fa-star text-turismo mr-2"></i>BENEFÍCIO 2</li>
+                    </ul>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ PREÇO <small
+                            class="text-xs text-gray-400">/ PESSOA_OU_BUGGY</small></div>
+                    <div class="flex gap-2">
+                        <button onclick="openModal('CARD_5')"
+                            class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba
+                            Mais</button>
+                        <a href="LINK_DO_WHATSAPP" target="_blank"
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                    </div>
+                </div>
+            </div>
+
+    <!--  CARD-6  -->     
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300"
+                data-aos="fade-up">
+                <div class="relative h-64 overflow-hidden">
+                    <div class="swiper tour-swiper h-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/city/city.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/city/city2.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/city/city3.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/city/city4.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/city/city5.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/city/city6.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/city/city7.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/city/city8.jpeg" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next clean-nav"></div>
+                    <div class="swiper-button-prev clean-nav"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 text-left">
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">Citytour recife e olinda</h3>
+                        <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">DESTAQUE</span>
+                    </div>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
+                        <li><i class="fa-solid fa-check text-turismo mr-2"></i>BENEFÍCIO 1</li>
+                        <li><i class="fa-solid fa-star text-turismo mr-2"></i>BENEFÍCIO 2</li>
+                    </ul>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ PREÇO <small
+                            class="text-xs text-gray-400">/ PESSOA_OU_BUGGY</small></div>
+                    <div class="flex gap-2">
+                        <button onclick="openModal('CARD_6')"
+                            class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba
+                            Mais</button>
+                        <a href="LINK_DO_WHATSAPP" target="_blank"
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                    </div>
+                </div>
+            </div>
+
+    <!--  CARD-7  -->     
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300"
+                data-aos="fade-up">
+                <div class="relative h-64 overflow-hidden">
+                    <div class="swiper tour-swiper h-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/paramotor/paramotor1.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/paramotor/paramotor2.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/paramotor/paramotor3.jpeg" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next clean-nav"></div>
+                    <div class="swiper-button-prev clean-nav"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 text-left">
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">Voo de Paramotor</h3>
+                        <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">DESTAQUE</span>
+                    </div>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
+                        <li><i class="fa-solid fa-check text-turismo mr-2"></i>BENEFÍCIO 1</li>
+                        <li><i class="fa-solid fa-star text-turismo mr-2"></i>BENEFÍCIO 2</li>
+                    </ul>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ PREÇO <small
+                            class="text-xs text-gray-400">/ PESSOA_OU_BUGGY</small></div>
+                    <div class="flex gap-2">
+                        <button onclick="openModal('CARD_7')"
+                            class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba
+                            Mais</button>
+                        <a href="LINK_DO_WHATSAPP" target="_blank"
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
+                    </div>
+                </div>
+            </div>
+
+    <!--  CARD-8  --> 
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300"
+                data-aos="fade-up">
+                <div class="relative h-64 overflow-hidden">
+                    <div class="swiper tour-swiper h-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/jet/jet1.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="img/jet/jet2.jpeg" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next clean-nav"></div>
+                    <div class="swiper-button-prev clean-nav"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 text-left">
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">Jetski</h3>
+                        <span class="bg-orange-100 text-orange-600 text-xs font-bold px-2 py-1 rounded">DESTAQUE</span>
+                    </div>
+                    <ul class="text-gray-600 mb-6 space-y-2 text-sm text-left">
+                        <li><i class="fa-solid fa-check text-turismo mr-2"></i>BENEFÍCIO 1</li>
+                        <li><i class="fa-solid fa-star text-turismo mr-2"></i>BENEFÍCIO 2</li>
+                    </ul>
+                    <div class="mb-4 text-left font-black text-2xl text-turismo">R$ PREÇO <small
+                            class="text-xs text-gray-400">/ PESSOA_OU_BUGGY</small></div>
+                    <div class="flex gap-2">
+                        <button onclick="openModal('CARD_8')"
+                            class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold transition-all text-sm">Saiba
+                            Mais</button>
+                        <a href="LINK_DO_WHATSAPP" target="_blank"
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-all text-sm text-center">Agendar</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="modal-ponta" class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    
+
+    <!--  DETALHES CARD-1  -->     
+
+    <div id="CARD_1" class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
             <div class="relative h-48 bg-slate-200">
-                <img src="https://images.unsplash.com/photo-1589901844607-380d886b08a2?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                <button onclick="closeModal('modal-ponta')" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                <img src="https://images.unsplash.com/photo-1589901844607-380d886b08a2?auto=format&fit=crop&w=800&q=80"
+                    class="w-full h-full object-cover">
+                <button onclick="closeModal('CARD_1')"
+                    class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="p-8">
                 <h2 class="text-3xl font-bold text-slate-900 mb-2">Ponta a Ponta (Buggy)</h2>
-                <p class="text-gray-600 mb-6">Explore as praias mais icônicas da região em um passeio emocionante com condutores experientes e paradas estratégicas.</p>
-                
+                <p class="text-gray-600 mb-6">Explore as praias mais icônicas da região em um passeio emocionante com
+                    condutores experientes e paradas estratégicas.</p>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-left">
                     <div>
                         <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
@@ -265,7 +532,9 @@
                         <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
                         <span class="text-3xl font-black text-turismo">R$ 350</span>
                     </div>
-                    <a href="https://wa.me/5521979860604?text=Olá, Jeje! Quero agendar o Buggy Ponta a Ponta." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                    <a href="https://wa.me/5521979860604?text=Olá, Jeje! Quero agendar o Buggy Ponta a Ponta."
+                        target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
                         Reservar Agora
                     </a>
                 </div>
@@ -273,18 +542,25 @@
         </div>
     </div>
 
-    <div id="modal-carneiros" class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+    <!--  DETALHES CARD-2  -->  
+
+    <div id="CARD_2"
+        class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
             <div class="relative h-48 bg-slate-200">
-                <img src="https://images.unsplash.com/photo-1620311093408-e2469493f0f7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                <button onclick="closeModal('modal-carneiros')" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                <img src="https://images.unsplash.com/photo-1620311093408-e2469493f0f7?auto=format&fit=crop&w=800&q=80"
+                    class="w-full h-full object-cover">
+                <button onclick="closeModal('CARD_2')"
+                    class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="p-8 text-left">
                 <h2 class="text-3xl font-bold text-slate-900 mb-2">Praia dos Carneiros</h2>
-                <p class="text-gray-600 mb-6">Um dos destinos mais paradisíacos do Brasil, famoso por suas águas calmas e a igrejinha à beira-mar.</p>
-                
+                <p class="text-gray-600 mb-6">Um dos destinos mais paradisíacos do Brasil, famoso por suas águas calmas
+                    e a igrejinha à beira-mar.</p>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div>
                         <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
@@ -314,7 +590,8 @@
                         <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
                         <span class="text-3xl font-black text-turismo">R$ 120</span>
                     </div>
-                    <a href="https://wa.me/5521979860604?text=Olá! Quero reservar Carneiros." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                    <a href="https://wa.me/5521979860604?text=Olá! Quero reservar Carneiros." target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
                         Reservar Agora
                     </a>
                 </div>
@@ -322,18 +599,25 @@
         </div>
     </div>
 
-    <div id="modal-maragogi" class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+    <!--  DETALHES CARD-3  -->  
+
+    <div id="CARD_3"
+        class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
             <div class="relative h-48 bg-slate-200">
-                <img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                <button onclick="closeModal('modal-maragogi')" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                <img src="https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=800&q=80"
+                    class="w-full h-full object-cover">
+                <button onclick="closeModal('CARD_3')"
+                    class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="p-8 text-left">
                 <h2 class="text-3xl font-bold text-slate-900 mb-2">Maragogi: Alagoas</h2>
-                <p class="text-gray-600 mb-6">Visite o "Caribe Brasileiro". Águas cristalinas, mornas e repletas de vida marinha nas famosas Galés.</p>
-                
+                <p class="text-gray-600 mb-6">Visite o "Caribe Brasileiro". Águas cristalinas, mornas e repletas de vida
+                    marinha nas famosas Galés.</p>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div>
                         <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
@@ -363,7 +647,278 @@
                         <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
                         <span class="text-3xl font-black text-turismo">R$ 150</span>
                     </div>
-                    <a href="https://wa.me/5521979860604?text=Olá! Quero ir para Maragogi." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                    <a href="https://wa.me/5521979860604?text=Olá! Quero ir para Maragogi." target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                        Reservar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  DETALHES CARD-4  -->  
+
+    <div id="CARD_4"
+        class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="relative h-48 bg-slate-200">
+                <img src="LINK_DA_FOTO_CAPA" class="w-full h-full object-cover">
+
+                <button onclick="closeModal('CARD_4')"
+                    class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 text-left">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">NOME DO PASSEIO</h2>
+                <p class="text-gray-600 mb-6">BREVE DESCRIÇÃO CHAMATIVA DO PASSEIO.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-turismo"></i> O que inclui
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• ITEM 1</li>
+                            <li>• ITEM 2</li>
+                            <li>• ITEM 3</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-turismo"></i> Informações
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Duração: TEMPO</li>
+                            <li>• Saída: LOCAL/HORÁRIO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
+                        <span class="text-3xl font-black text-turismo">R$ PREÇO</span>
+                    </div>
+                    <a href="LINK_DO_WHATSAPP" target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                        Reservar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  DETALHES CARD-5  -->  
+
+    <div id="CARD_5"
+        class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="relative h-48 bg-slate-200">
+                <img src="LINK_DA_FOTO_CAPA" class="w-full h-full object-cover">
+
+                <button onclick="closeModal('CARD_5')"
+                    class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 text-left">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">NOME DO PASSEIO</h2>
+                <p class="text-gray-600 mb-6">BREVE DESCRIÇÃO CHAMATIVA DO PASSEIO.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-turismo"></i> O que inclui
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• ITEM 1</li>
+                            <li>• ITEM 2</li>
+                            <li>• ITEM 3</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-turismo"></i> Informações
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Duração: TEMPO</li>
+                            <li>• Saída: LOCAL/HORÁRIO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
+                        <span class="text-3xl font-black text-turismo">R$ PREÇO</span>
+                    </div>
+                    <a href="LINK_DO_WHATSAPP" target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                        Reservar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  DETALHES CARD-6  -->  
+
+    <div id="CARD_6"
+        class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="relative h-48 bg-slate-200">
+                <img src="LINK_DA_FOTO_CAPA" class="w-full h-full object-cover">
+
+                <button onclick="closeModal('CARD_6')"
+                    class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 text-left">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">NOME DO PASSEIO</h2>
+                <p class="text-gray-600 mb-6">BREVE DESCRIÇÃO CHAMATIVA DO PASSEIO.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-turismo"></i> O que inclui
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• ITEM 1</li>
+                            <li>• ITEM 2</li>
+                            <li>• ITEM 3</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-turismo"></i> Informações
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Duração: TEMPO</li>
+                            <li>• Saída: LOCAL/HORÁRIO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
+                        <span class="text-3xl font-black text-turismo">R$ PREÇO</span>
+                    </div>
+                    <a href="LINK_DO_WHATSAPP" target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                        Reservar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  DETALHES CARD-7  -->  
+
+    <div id="CARD_7"
+        class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="relative h-48 bg-slate-200">
+                <img src="LINK_DA_FOTO_CAPA" class="w-full h-full object-cover">
+
+                <button onclick="closeModal('CARD_7')"
+                    class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 text-left">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">NOME DO PASSEIO</h2>
+                <p class="text-gray-600 mb-6">BREVE DESCRIÇÃO CHAMATIVA DO PASSEIO.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-turismo"></i> O que inclui
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• ITEM 1</li>
+                            <li>• ITEM 2</li>
+                            <li>• ITEM 3</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-turismo"></i> Informações
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Duração: TEMPO</li>
+                            <li>• Saída: LOCAL/HORÁRIO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
+                        <span class="text-3xl font-black text-turismo">R$ PREÇO</span>
+                    </div>
+                    <a href="LINK_DO_WHATSAPP" target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
+                        Reservar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  DETALHES CARD-8  -->  
+
+    <div id="CARD_8"
+        class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="relative h-48 bg-slate-200">
+                <img src="LINK_DA_FOTO_CAPA" class="w-full h-full object-cover">
+
+                <button onclick="closeModal('CARD_8')"
+                    class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 text-left">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">NOME DO PASSEIO</h2>
+                <p class="text-gray-600 mb-6">BREVE DESCRIÇÃO CHAMATIVA DO PASSEIO.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-turismo"></i> O que inclui
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• ITEM 1</li>
+                            <li>• ITEM 2</li>
+                            <li>• ITEM 3</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-turismo"></i> Informações
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Duração: TEMPO</li>
+                            <li>• Saída: LOCAL/HORÁRIO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t pt-6">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase font-bold">Investimento</span>
+                        <span class="text-3xl font-black text-turismo">R$ PREÇO</span>
+                    </div>
+                    <a href="LINK_DO_WHATSAPP" target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200">
                         Reservar Agora
                     </a>
                 </div>
@@ -377,20 +932,23 @@
                 <h2 class="text-3xl font-bold">Experiências de quem já viajou conosco</h2>
                 <div class="w-20 h-1 bg-turismo-accent mx-auto mt-4"></div>
             </div>
-            
+
             <div class="swiper avaliacaoSwiper pb-12">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide p-4">
-                        <div class="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 italic relative text-left">
+                        <div
+                            class="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 italic relative text-left">
                             <i class="fa-solid fa-quote-left text-turismo-accent text-4xl absolute -top-4 left-6"></i>
-                            <p class="mb-6 text-gray-300">"O Jeje é nota 10! Fizemos o passeio de buggy e ele sabia os melhores pontos para fotos onde não tinha muita gente. Valeu cada centavo!"</p>
+                            <p class="mb-6 text-gray-300">"O Jeje é nota 10! Fizemos o passeio de buggy e ele sabia os
+                                melhores pontos para fotos onde não tinha muita gente. Valeu cada centavo!"</p>
                             <h4 class="font-bold text-white text-left">Mariana Silva - SP</h4>
                         </div>
                     </div>
                     <div class="swiper-slide p-4 text-left">
                         <div class="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 italic relative">
                             <i class="fa-solid fa-quote-left text-turismo-accent text-4xl absolute -top-4 left-6"></i>
-                            <p class="mb-6 text-gray-300">"Toda a logística para Carneiros foi impecável. Guia pontual e muito educado. Com certeza recomendaremos para nossos amigos."</p>
+                            <p class="mb-6 text-gray-300">"Toda a logística para Carneiros foi impecável. Guia pontual e
+                                muito educado. Com certeza recomendaremos para nossos amigos."</p>
                             <h4 class="font-bold text-white">Carlos André - MG</h4>
                         </div>
                     </div>
@@ -407,23 +965,32 @@
                 <div class="w-20 h-1 bg-turismo-accent mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://i.pravatar.cc/150?u=jeje" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://i.pravatar.cc/150?u=jeje"
+                        class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
                     <h3 class="font-bold text-2xl mb-1 text-slate-900 text-center">Jefferson (Jeje)</h3>
                     <p class="text-turismo font-semibold mb-4 text-center">Fundador e Guia Líder</p>
-                    <p class="text-gray-500 text-sm italic text-center">"Apaixonado por Porto, o Jeje garante que cada turista sinta a energia única de Pernambuco."</p>
+                    <p class="text-gray-500 text-sm italic text-center">"Apaixonado por Porto, o Jeje garante que cada
+                        turista sinta a energia única de Pernambuco."</p>
                 </div>
-                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://i.pravatar.cc/150?u=junior" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://i.pravatar.cc/150?u=junior"
+                        class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
                     <h3 class="font-bold text-2xl mb-1 text-slate-900 text-center">Júnior Buggy</h3>
                     <p class="text-turismo font-semibold mb-4 text-center">Especialista em Aventuras</p>
-                    <p class="text-gray-500 text-sm italic text-center">"Com Júnior, a emoção é garantida com toda a segurança nos melhores caminhos de areia."</p>
+                    <p class="text-gray-500 text-sm italic text-center">"Com Júnior, a emoção é garantida com toda a
+                        segurança nos melhores caminhos de areia."</p>
                 </div>
-                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://i.pravatar.cc/150?u=ana" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg border-t-4 border-turismo hover:-translate-y-2 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://i.pravatar.cc/150?u=ana"
+                        class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
                     <h3 class="font-bold text-2xl mb-1 text-slate-900 text-center">Ana Luísa</h3>
                     <p class="text-turismo font-semibold mb-4 text-center">Atendimento e Reservas</p>
-                    <p class="text-gray-500 text-sm italic text-center">"A Ana organiza seu roteiro de forma personalizada, do primeiro contato até o fim da viagem."</p>
+                    <p class="text-gray-500 text-sm italic text-center">"A Ana organiza seu roteiro de forma
+                        personalizada, do primeiro contato até o fim da viagem."</p>
                 </div>
             </div>
         </div>
@@ -431,11 +998,15 @@
 
     <footer class="bg-slate-900 text-gray-400 py-12 text-center border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-2 italic">JEJE<span class="text-turismo-accent">PASSEIOS</span></h2>
+            <h2 class="text-2xl font-bold text-white mb-2 italic">JEJE<span class="text-turismo-accent">PASSEIOS</span>
+            </h2>
             <p class="mb-6">Sua melhor experiência em Porto de Galinhas começa aqui.</p>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://www.instagram.com/jejepasseios?igsh=Y2VwZ2RheWlldWs3" target="_blank" class="text-gray-400 hover:text-white transition-all text-2xl"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/5521979860604" class="text-gray-400 hover:text-white transition-all text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/jejepasseios?igsh=Y2VwZ2RheWlldWs3" target="_blank"
+                    class="text-gray-400 hover:text-white transition-all text-2xl"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/5521979860604" class="text-gray-400 hover:text-white transition-all text-2xl"><i
+                        class="fa-brands fa-whatsapp"></i></a>
             </div>
             <p class="text-sm">© 2026 JEJE Passeios - Porto de Galinhas, PE.</p>
         </div>
@@ -493,7 +1064,7 @@
             document.body.style.overflow = 'auto';
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target.classList.contains('bg-black/60')) {
                 event.target.classList.add('hidden');
                 document.body.style.overflow = 'auto';
@@ -501,9 +1072,9 @@
         }
 
         // SWIPER DOS CARDS - AQUI CADA UM FUNCIONA INDEPENDENTE
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const cards = document.querySelectorAll('.group');
-            
+
             cards.forEach(card => {
                 const swiperEl = card.querySelector('.tour-swiper');
                 const nextEl = card.querySelector('.swiper-button-next');
@@ -513,19 +1084,37 @@
                 if (swiperEl) {
                     new Swiper(swiperEl, {
                         loop: true,
-                        autoplay: false, 
-                        pagination: { 
-                            el: pagEl, 
-                            clickable: true 
+                        autoplay: false,
+                        pagination: {
+                            el: pagEl,
+                            clickable: true
                         },
-                        navigation: { 
-                            nextEl: nextEl, 
-                            prevEl: prevEl 
+                        navigation: {
+                            nextEl: nextEl,
+                            prevEl: prevEl
                         },
                     });
                 }
             });
         });
     </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        turismo: {
+                            DEFAULT: '#0077b6',
+                            light: '#90e0ef',
+                            accent: '#ffb703',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
 </body>
+
 </html>
