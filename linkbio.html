@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | JEJE Passeios</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        turismo: '#0077b6', /* Azul JEJE */
+                        'turismo-accent': '#ffb703',
+                        fundo: '#05122d', /* Azul Marinho Escuro do fundo */
+                        botao: '#0a1733', /* Azul dos botões */
+                        'botao-hover': '#12244a'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            background-color: var(--fundo);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animações de entrada */
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        /* =========================================
+           O GRID DA PAREDE DE FOTOS
+           ========================================= */
+        .gallery-wall {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            grid-auto-rows: 140px;
+            grid-auto-flow: dense; 
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .span-col-2 { grid-column: span 2; }
+        .span-row-2 { grid-row: span 2; }
+        .span-large { grid-column: span 2; grid-row: span 2; }
+
+        .frame {
+            position: relative;
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.8), 0 5px 10px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .frame-wood {
+            background: #2b1d0e;
+            padding: 12px;
+            border: 2px solid #1a1108;
+            border-radius: 4px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.9), 0 15px 25px rgba(0,0,0,0.8);
+        }
+
+        .frame-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #aa771c 50%, #f3e5ab 75%, #8a5a19 100%);
+            padding: 10px;
+            border-radius: 2px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5), 0 15px 25px rgba(0,0,0,0.8);
+        }
+
+        .passe-partout {
+            background: #f4f0ec;
+            padding: 10px;
+            width: 100%; height: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 0 3px 8px rgba(0,0,0,0.4);
+        }
+
+        .frame-image {
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+            transition: background-image 1.5s ease-in-out; 
+        }
+
+        /* Película escura para dar a base Azul Marinho do seu layout */
+        .wall-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(5, 18, 45, 0.88); /* Fundo #05122d com 88% de opacidade */
+            backdrop-filter: blur(4px);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body class="text-white flex flex-col items-center">
+
+    <div class="gallery-wall" id="gallery-wall"></div>
+
+    <div class="wall-overlay"></div>
+
+    <div class="relative w-full max-w-md mx-auto flex flex-col items-center min-h-[100dvh] py-8 md:py-12 px-4 z-10">
+        
+        <div class="w-full flex justify-end items-center px-2 mb-6 fade-in-up">
+            <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors shadow-lg" onclick="navigator.share({title: 'JEJE Passeios', url: window.location.href}).catch(console.error);" aria-label="Compartilhar página">
+                <i class="fa-solid fa-arrow-up-from-bracket text-gray-300"></i>
+            </button>
+        </div>
+
+        <div class="text-center mb-8 fade-in-up flex flex-col items-center">
+            <img src="img/LOGO.jpeg" alt="Logo JEJE Passeios" class="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full mb-4 shadow-[0_0_15px_rgba(0,119,182,0.3)]">
+            
+            <p class="text-xs md:text-sm text-turismo mt-4 font-bold tracking-wide leading-relaxed px-4 uppercase">
+                O MELHOR DE PORTO DE GALINHAS E REGIÃO
+                <span class="block mt-2 font-medium text-gray-300 uppercase">PASSEIOS - BUGGY - LANCHA</span>
+            </p>
+        </div>
+
+        <div class="flex gap-6 mb-8 fade-in-up delay-100">
+            <a href="https://wa.me/5521979860604" target="_blank" class="text-3xl text-gray-300 hover:text-[#25D366] hover:scale-110 transition-all drop-shadow-md">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/jejepasseios" target="_blank" class="text-3xl text-gray-300 hover:text-[#E1306C] hover:scale-110 transition-all drop-shadow-md">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+
+        <div class="w-full space-y-4">
+            
+            <a href="https://wa.me/5521979860604" target="_blank" 
+               class="fade-in-up delay-100 group relative w-full flex items-center justify-center p-4 bg-botao border border-white/10 rounded-xl hover:bg-botao-hover transition-all duration-300 overflow-hidden shadow-lg">
+                <i class="fa-brands fa-whatsapp absolute left-6 text-xl text-gray-400 group-hover:text-white transition-colors"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white text-sm md:text-base">Agendar meu Passeio (WhatsApp)</span>
+                <i class="fa-solid fa-ellipsis-vertical absolute right-6 text-gray-500 group-hover:text-white/50"></i>
+            </a>
+
+            <a href="https://www.instagram.com/jejepasseios" target="_blank" 
+               class="fade-in-up delay-200 group relative w-full flex items-center justify-center p-4 bg-botao border border-white/10 rounded-xl hover:bg-botao-hover transition-all duration-300 shadow-lg">
+                <i class="fa-brands fa-instagram absolute left-6 text-xl text-gray-400 group-hover:text-white transition-colors"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white text-sm md:text-base">Siga nosso Instagram</span>
+                <i class="fa-solid fa-ellipsis-vertical absolute right-6 text-gray-500 group-hover:text-white/50"></i>
+            </a>
+
+            <a href="index.html" target="_self" 
+               class="fade-in-up delay-300 group relative w-full flex items-center justify-center p-4 bg-botao border border-white/10 rounded-xl hover:bg-botao-hover transition-all duration-300 shadow-lg">
+                <i class="fa-solid fa-globe absolute left-6 text-xl text-gray-400 group-hover:text-white transition-colors"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white text-sm md:text-base">Acessar Site Oficial</span>
+                <i class="fa-solid fa-ellipsis-vertical absolute right-6 text-gray-500 group-hover:text-white/50"></i>
+            </a>
+
+            <a href="#" target="_blank" 
+               class="fade-in-up delay-400 group relative w-full flex items-center justify-center p-4 bg-botao border border-white/10 rounded-xl hover:bg-botao-hover transition-all duration-300 shadow-lg">
+                <i class="fa-brands fa-tripadvisor absolute left-6 text-xl text-gray-400 group-hover:text-white transition-colors"></i>
+                <span class="font-semibold text-gray-200 group-hover:text-white text-sm md:text-base">Avaliações no TripAdvisor</span>
+                <i class="fa-solid fa-ellipsis-vertical absolute right-6 text-gray-500 group-hover:text-white/50"></i>
+            </a>
+            
+        </div>
+
+        <div class="mt-auto pt-10 text-center fade-in-up delay-400 w-full">
+            <p class="text-xs text-gray-500">© 2026 JEJE Passeios Terrestres e Aquáticos</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = [
+                'https://images.unsplash.com/photo-1589901844607-380d886b08a2?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1620311093408-e2469493f0f7?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1506929197327-0e3962d7a603?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1506929197327-0e3962d7a603?auto=format&fit=crop&w=600&q=80'
+            ];
+
+            const wall = document.getElementById('gallery-wall');
+            const numFrames = 30; 
+            const frameStyles = ['frame-wood', 'frame-gold'];
+
+            for (let i = 0; i < numFrames; i++) {
+                const style = frameStyles[Math.floor(Math.random() * frameStyles.length)];
+                
+                let sizeClass = '';
+                const rand = Math.random();
+                if (rand > 0.85) sizeClass = 'span-large';
+                else if (rand > 0.6) sizeClass = 'span-col-2';
+                else if (rand > 0.35) sizeClass = 'span-row-2';
+
+                const imgUrl = images[Math.floor(Math.random() * images.length)];
+
+                const frameHTML = `
+                    <div class="frame ${style} ${sizeClass}">
+                        <div class="passe-partout">
+                            <div class="frame-image" style="background-image: url('${imgUrl}')"></div>
+                        </div>
+                    </div>
+                `;
+                wall.innerHTML += frameHTML;
+            }
+
+            const frameImages = document.querySelectorAll('.frame-image');
+            
+            setInterval(() => {
+                for(let i=0; i<3; i++) {
+                    const randomFrame = frameImages[Math.floor(Math.random() * frameImages.length)];
+                    const randomImg = images[Math.floor(Math.random() * images.length)];
+                    randomFrame.style.backgroundImage = `url('${randomImg}')`;
+                }
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
