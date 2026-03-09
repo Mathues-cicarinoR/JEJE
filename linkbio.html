@@ -105,13 +105,16 @@
             transition: background-image 1.5s ease-in-out; 
         }
 
-        /* Película escura para dar a base Azul Marinho do seu layout */
+        /* =========================================
+           A MÁGICA DO GRADIENTE AQUI
+           ========================================= */
         .wall-overlay {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(5, 18, 45, 0.88); /* Fundo #05122d com 88% de opacidade */
-            backdrop-filter: blur(4px);
+            /* Radial Gradient: 95% escuro no centro, clareando até 10% nas bordas */
+            background: radial-gradient(ellipse at center, rgba(5, 18, 45, 0.95) 20%, rgba(5, 18, 45, 0.6) 65%, rgba(5, 18, 45, 0.1) 100%);
+            backdrop-filter: blur(2px); /* Desfoque menor para as fotos das bordas brilharem mais */
             z-index: 5;
         }
     </style>
@@ -125,15 +128,15 @@
     <div class="relative w-full max-w-md mx-auto flex flex-col items-center min-h-[100dvh] py-8 md:py-12 px-4 z-10">
         
         <div class="w-full flex justify-end items-center px-2 mb-6 fade-in-up">
-            <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors shadow-lg" onclick="navigator.share({title: 'JEJE Passeios', url: window.location.href}).catch(console.error);" aria-label="Compartilhar página">
+            <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors shadow-lg border border-white/10" onclick="navigator.share({title: 'JEJE Passeios', url: window.location.href}).catch(console.error);" aria-label="Compartilhar página">
                 <i class="fa-solid fa-arrow-up-from-bracket text-gray-300"></i>
             </button>
         </div>
 
         <div class="text-center mb-8 fade-in-up flex flex-col items-center">
-            <img src="img/LOGO.jpeg" alt="Logo JEJE Passeios" class="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full mb-4 shadow-[0_0_15px_rgba(0,119,182,0.3)]">
+            <img src="https://i.pravatar.cc/150?u=jeje" alt="Logo JEJE Passeios" class="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full mb-4 shadow-[0_0_15px_rgba(0,119,182,0.3)] border-2 border-white/10">
             
-            <p class="text-xs md:text-sm text-turismo mt-4 font-bold tracking-wide leading-relaxed px-4 uppercase">
+            <p class="text-xs md:text-sm text-turismo mt-4 font-bold tracking-wide leading-relaxed px-4 uppercase drop-shadow-md">
                 O MELHOR DE PORTO DE GALINHAS E REGIÃO
                 <span class="block mt-2 font-medium text-gray-300 uppercase">PASSEIOS - BUGGY - LANCHA</span>
             </p>
@@ -180,8 +183,8 @@
             
         </div>
 
-        <div class="mt-auto pt-10 text-center fade-in-up delay-400 w-full">
-            <p class="text-xs text-gray-500">© 2026 JEJE Passeios Terrestres e Aquáticos</p>
+        <div class="mt-auto pt-10 text-center fade-in-up delay-400 w-full drop-shadow-lg">
+            <p class="text-xs text-gray-400">© 2026 JEJE Passeios Terrestres e Aquáticos</p>
         </div>
     </div>
 
