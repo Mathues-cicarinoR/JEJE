@@ -11,33 +11,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <script>
-        tailwind.config = { 
-            theme: { 
-                extend: { 
-                    colors: { 
-                        turismo: '#0077b6', 
-                        'turismo-accent': '#ffb703',
-                        'slate-900': '#0f172a',
-                        'zap': '#25D366'
-                    } 
-                } 
-            } 
-        }
-    </script>
-    <style>
-        /* Sombra hiper suave para o cartão direito */
-        .shadow-soft {
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-        }
-        /* Ajuste para as setas do carrossel */
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 24px !important;
-            font-weight: bold;
-            color: #ffffff;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-[#f8fafc] text-gray-800 font-sans antialiased relative">
 
@@ -70,13 +44,13 @@
                 <div class="relative aspect-[4/4] w-full overflow-hidden bg-gray-100">
                     <div class="swiper mySwiper h-full w-full absolute inset-0">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/img/carneiros/carneiros1.jpeg" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="/img/carneiros/carneiros2.jpeg" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="/img/carneiros/carneiros3.jpeg" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="/img/carneiros/carneiros4.jpeg" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="/img/carneiros/carneiros5.jpeg" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="/img/carneiros/carneiros6.jpeg" class="w-full h-full object-cover"></div>
-                            <div class="swiper-slide"><img src="/img/carneiros/carneiros7.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="../img/carneiros/carneiros1.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="../img/carneiros/carneiros2.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="../img/carneiros/carneiros3.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="../img/carneiros/carneiros4.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="../img/carneiros/carneiros5.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="../img/carneiros/carneiros6.jpeg" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="../img/carneiros/carneiros7.jpeg" class="w-full h-full object-cover"></div>
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-next text-white"></div>
@@ -199,23 +173,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
+    <!-- Scripts Globais -->
+    <script src="../js/main.js"></script>
 </body>
 </html>
